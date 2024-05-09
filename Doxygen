@@ -1,1 +1,7 @@
+# Doxyfile configuration file
+
+PROJECT_NAME           = "Bug Tracking Demo"
+INPUT                  = bug-tracking-demo
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
 
