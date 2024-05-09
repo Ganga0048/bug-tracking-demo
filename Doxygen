@@ -1,6 +1,7 @@
 # Doxyfile configuration file
 
-PROJECT_NAME = "Bug Tracking Demo"
-INPUT = .
-RECURSIVE = YES
-EXTRACT_ALL = YES
+PROJECT_NAME           = "Bug Tracking Demo"
+INPUT                  = ./Open\ Source/Bug_tracking_demo
+OUTPUT_DIRECTORY       = ./docs
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
