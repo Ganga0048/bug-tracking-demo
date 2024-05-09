@@ -4,23 +4,25 @@ on:
   push:
     branches:
       - main
-      - bug-fix
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Install Doxygen
-        run: sudo apt-get install doxygen -y
+        run: sudo apt-get install -y doxygen
 
       - name: Run Doxygen
-        run: doxygen Doxyfile
+        run: doxygen
 
-      - name: Deploy Documentation
-        uses: actions/upload-artifact@v2
-        with:
-          name: doxygen-docs
-          path: html
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Generate Doxygen documentation"
+          git push
